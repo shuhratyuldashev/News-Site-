@@ -5,7 +5,6 @@ import DropdownTheme from "./ui/ChangeTheme";
 import Container from "@/shared/container";
 
 const Header = ({ isAuth }: { isAuth: boolean }) => {
-
   return (
     <header className="py-2 w-full">
       <Container className="flex justify-between items-center">

@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 
 const SignInForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const form = useForm({
     resolver: zodResolver(SignInSchema),
@@ -30,7 +30,9 @@ const SignInForm = () => {
     <Form {...form}>
       <form
         className="px-4"
-        onSubmit={form.handleSubmit((body) => onSubmitSignIn(body, dispatch, navigate))}
+        onSubmit={form.handleSubmit((body) =>
+          onSubmitSignIn(body, dispatch, navigate),
+        )}
       >
         <FormField
           control={form.control}

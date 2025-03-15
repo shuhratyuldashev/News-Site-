@@ -1,3 +1,3 @@
 import { TabsTriggers } from "./tabs-triggers";
 
-export { TabsTriggers }
+export { TabsTriggers };

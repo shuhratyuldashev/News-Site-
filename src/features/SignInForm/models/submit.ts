@@ -2,7 +2,11 @@ import { toast } from "sonner";
 import { iSignIn } from "../types/types";
 import { fetchingSignIn } from "@/shared/store/slices/auth.js";
 
-export const onSubmitSignIn = async (body: iSignIn, dispatch: any, navigate: any) => {
+export const onSubmitSignIn = async (
+  body: iSignIn,
+  dispatch: any,
+  navigate: any,
+) => {
   try {
     const data = await dispatch(fetchingSignIn(body)).unwrap();
 
@@ -17,6 +21,6 @@ export const onSubmitSignIn = async (body: iSignIn, dispatch: any, navigate: any
     toast.error("Ошибка авторизации, проверьте почту и пароль");
     console.log(error);
   } finally {
-    navigate("/")
+    navigate("/");
   }
 };

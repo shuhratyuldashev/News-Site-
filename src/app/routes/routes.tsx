@@ -7,15 +7,15 @@ import { Toaster } from "@/shared/ui/sonner";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import { fetchingAuthMe, isAuth } from "@/shared/store/slices/auth.js"
+import { fetchingAuthMe, isAuth } from "@/shared/store/slices/auth.js";
 
 const AppRouter = () => {
   const isUserAuth = useSelector(isAuth);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchingAuthMe)
-  }, [])
+    dispatch(fetchingAuthMe);
+  }, []);
 
   return (
     <>

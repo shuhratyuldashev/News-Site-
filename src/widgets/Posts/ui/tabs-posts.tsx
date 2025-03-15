@@ -7,7 +7,15 @@ const TabsPosts = ({ isAuth }: { isAuth: boolean }) => {
   return (
     <div className="flex items-center justify-between">
       <TabsList>
-        {TabsTriggers.map((t) => <TabsTrigger className={t.needAuth === isAuth || isAuth ? 'block' : 'hidden'} key={t.value} value={t.value}>{t.label}</TabsTrigger>)}
+        {TabsTriggers.map((t) => (
+          <TabsTrigger
+            className={t.needAuth === isAuth || isAuth ? "block" : "hidden"}
+            key={t.value}
+            value={t.value}
+          >
+            {t.label}
+          </TabsTrigger>
+        ))}
       </TabsList>
       <Button className="lg:hidden" size="icon" variant="secondary">
         <Hash />

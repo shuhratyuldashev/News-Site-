@@ -4,7 +4,7 @@ import axios from "@/shared/axios";
 const initialState = {
   data: null,
   status: "loading",
-  isAuth: false
+  isAuth: false,
 };
 
 export const fetchingSignIn = createAsyncThunk("auth/sign-in", async (body) => {
@@ -17,12 +17,10 @@ export const fetchingSignUp = createAsyncThunk("auth/sign-up", async (body) => {
   return response.data;
 });
 
-export const fetchingAuthMe = createAsyncThunk("auth/me", async() => {
-  const { data } = await axios.get("auth/me")
-  return data
-})
-
-
+export const fetchingAuthMe = createAsyncThunk("auth/me", async () => {
+  const { data } = await axios.get("auth/me");
+  return data;
+});
 
 const AuthSlice = createSlice({
   name: "auth",
@@ -73,6 +71,6 @@ const AuthSlice = createSlice({
   },
 });
 
-export const isAuth = (state) => state.auth.isAuth; 
+export const isAuth = (state) => state.auth.isAuth;
 
 export const authReducer = AuthSlice.reducer;
